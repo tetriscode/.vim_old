@@ -15,13 +15,13 @@ set colorcolumn=80
 set tabstop=4
 set shiftwidth=4
 set autoindent
-set expandtab
 set wildignore+=node_modules
-set backupdir=/Users/tmcw/tmp/
-set directory=/Users/tmcw/tmp/
+set backupdir=/Users/wesr/tmp/
+set directory=/Users/wesr/tmp/
 set nobackup
 set nowritebackup
 set splitright
+set list
 
 set laststatus=2
 set timeout timeoutlen=1000 ttimeoutlen=100
@@ -32,9 +32,9 @@ if has("gui_running")
   set go-=T
   set guifont=M+_1mn_light:h18
   set noballooneval
-  colorscheme base16-tomorrow
+  colorscheme Tomorrow-Night-Bright 
 else
-  colorscheme desert256
+  colorscheme Tomorrow-Night-Bright
   set mouse=a
 endif
 
@@ -74,9 +74,6 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ctrlp_extensions = ['line', 'funky', 'csearch']
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 nnoremap <C-f> :CtrlPFunky<Cr>
-
-
-set statusline=%f%{fugitive#statusline()}
 
 nmap <leader>a :Ack 
 nmap <leader>c :Gcommit --amend<Cr>
