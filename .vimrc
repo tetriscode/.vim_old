@@ -10,10 +10,11 @@ set nocompatible
 set showmatch
 set ruler
 set nowrap
+set tabstop=4
+set expandtab
+set shiftwidth=4
 set hlsearch
 set colorcolumn=80
-set tabstop=4
-set shiftwidth=4
 set autoindent
 set wildignore+=node_modules
 set backupdir=/Users/wesr/tmp/
@@ -21,7 +22,6 @@ set directory=/Users/wesr/tmp/
 set nobackup
 set nowritebackup
 set splitright
-set list
 
 set laststatus=2
 set timeout timeoutlen=1000 ttimeoutlen=100
@@ -49,6 +49,8 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd vimenter * NERDTree
 
 function! LightMode()
   colorscheme habiLight
